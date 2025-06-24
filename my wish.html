@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday My Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: linear-gradient(to top, #ffd6e0, #aee9ff);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff1a75;
+      font-size: 2.5em;
+      margin-top: 40px;
+      text-shadow: 1px 1px 3px white;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 85%;
+      color: #660033;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    audio {
+      margin-top: 20px;
+    }
+
+    /* ===== Cloud Styles ===== */
+    .cloud {
+      width: 120px;
+      height: 60px;
+      background: #fff;
+      border-radius: 60px;
+      position: absolute;
+      top: 60px;
+      animation: moveClouds 60s linear infinite;
+      z-index: 1;
+    }
+
+    .cloud:before, .cloud:after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 80px;
+      height: 80px;
+      top: -20px;
+      left: 10px;
+      border-radius: 50%;
+    }
+
+    .cloud:after {
+      width: 100px;
+      height: 100px;
+      top: -40px;
+      left: 50px;
+    }
+
+    .cloud1 { left: -150px; top: 80px; animation-delay: 0s; }
+    .cloud2 { left: -300px; top: 130px; animation-delay: 20s; }
+    .cloud3 { left: -500px; top: 100px; animation-delay: 40s; }
+
+    @keyframes moveClouds {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(200vw); }
+    }
+
+    /* ===== Hearts Animation ===== */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff3399;
+      font-size: 20px;
+      animation: fall 8s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Gallery container */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 80px;
+      margin: 40px auto 60px;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    /* Center image: Sir J */
+    .center-img {
+      width: 250px;
+      height: auto;
+      border: 12px solid #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 0, 128, 0.8);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: white;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .center-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(255, 0, 128, 1);
+    }
+
+    /* Side images - circular frames */
+    .side-img {
+      width: 180px;
+      height: 180px;
+      border: 8px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      object-fit: cover;
+      background: white;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .side-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 0, 128, 0.6);
+      z-index: 20;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Moving Clouds -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+
+  <!-- Message -->
+  <h1>Happy Birthday My Love 💖</h1>
+  <p>
+    The sky moves just to celebrate you,<br />
+    and even the stars are jealous of your beauty.<br />
+    You make my world shine every single day. I love you deeply. 💕
+  </p>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img
+      src="file:///C:/Users/Mutesi%20%26%20ursula/Desktop/mine/wishes.jpeg"
+      alt="Wishes"
+      class="side-img"
+    />
+    <img
+      src="file:///C:/Users/Mutesi%20%26%20ursula/Desktop/mine/sir%20j.jpeg"
+      alt="Sir J"
+      class="center-img"
+    />
+    <img
+      src="file:///C:/Users/Mutesi%20%26%20ursula/Desktop/mine/wish.jpeg"
+      alt="Wish"
+      class="side-img"
+    />
+  </div>
+
+  <!-- Music -->
+  <audio controls autoplay loop>
+    <source src="file:///C:/Users/Mutesi%20%26%20ursula/Downloads/WhatsApp%20Audio%202025-06-24%20at%2010.32.05%20PM.mpeg" type="audio/mpeg" />
+    Your browser does not support the audio tag.
+  </audio>
+
+  <!-- Falling Hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.innerText = "❤️";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
